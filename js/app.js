@@ -148,13 +148,13 @@ function sScroll(e) {
     const clickedIndex = Array.from(navATag).indexOf(e.target);
 
     // Scroll to the corresponding section
-    if (clickedIndex !== -1 && clickedIndex < sectionList.length) {
+   
         let smoothSection = sectionList[clickedIndex].getBoundingClientRect().top;
         window.scrollTo({
             top: smoothSection + window.scrollY,
             behavior: 'smooth'
         });
-    }
+    
 }
     
 // Add class 'active' to section when near top of viewport
