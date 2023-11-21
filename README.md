@@ -1,8 +1,20 @@
 # landingPage
-Landing page template
+
+## Project Description
+Landing page template the features for the Navigation bar and sections of the page enabled.
+
+## Explaination of features
+
 Template page with navigation menu with smooth scrolling to page sections.
-  - This features anchor tags with event listeners to navigate to the sections of the page smoothly.
+- The navigation menu features dynamic building and smooth scroll functionality.
+  - Dynamic building
+    - The navigation menu will create new tags with features when new sections are added to the page.
+   - Smooth Scroll     
+      - Smooth scrolling using the`element.getBoundingClientRect` method and `scrollTo` to scroll to the corresponding section when the link is clicked on.
+      - A `.forEach` is used to loop through the `navATag` list like element to add the event listener to all navigation links. 
 Sections of the page will become active once in the view port.
     - An active class will be applied once the view port conditions have been met.
-    - Upon scrolling, the navigation menu link that corresponds to the section of the page being viewed will highlight.
-Navigation menu will grow upon new sections being added to the page
+      - The class name `your-active-class` is added to the section once the section comes into view.
+      - The class name will activate CSS animations that run behind the `paragraph` tags.
+    
+
