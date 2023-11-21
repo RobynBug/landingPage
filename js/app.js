@@ -22,9 +22,8 @@
  * Define Global Variables
  *
  */
-const body = document.querySelector('body');
-const header = document.querySelector('.page__header');
-
+const body = document.querySelector("body");
+const header = document.querySelector(".page__header");
 
 //section list
 const sectionList = document.getElementsByTagName("section");
@@ -136,7 +135,7 @@ function setNavItemActive() {
         "style",
         "text-decoration: none; font-size: 1.4rem;"
       );
-  }
+    }
   });
 }
 
@@ -157,9 +156,9 @@ function sScroll(e) {
 
 //add margin to the header
 
-main.style.paddingTop = '2rem';
-body.setAttribute('style','min-width: 665px');
-header.setAttribute('style','min-width: 665px');
+main.style.paddingTop = "2rem";
+body.setAttribute("style", "min-width: 665px");
+header.setAttribute("style", "min-width: 665px");
 
 // Scroll to anchor ID using scrollTO event
 
