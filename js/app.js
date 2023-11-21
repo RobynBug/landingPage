@@ -44,7 +44,7 @@ const navbar = document.getElementById('navbar__list');
 function activeSection(item){
     const itemLocation = item.getBoundingClientRect();
 
-    if(itemLocation.top >= 0 && itemLocation.bottom <= window.innerHeight){
+    if(itemLocation.top > 0 && itemLocation.bottom + itemLocation.top <= window.innerHeight){
         return true;
     }
     return false;
@@ -109,37 +109,37 @@ navLi.forEach(function(navItem) {
 
 function setNavItemActive () {
     navATag.forEach(function(navItem, index) {
+        let w = window.innerWidth;
+        //conditional statement checking for screen size
+    if (w >= 730){
    
-        //checks to see if the class contains yuor active class and adds specific styling
-    if(sectionList[index].classList.contains('your-active-class')) {
-        navItem.classList.add('active');
-        navItem.setAttribute('style', 'border: 2px solid black; padding: 0.75rem; background-color: #452c63; color: white; text-decoration: none; font-size: 1.5rem;')
+            //checks to see if the class contains yuor active class and adds specific styling
+        if(sectionList[index].classList.contains('your-active-class')) {
+            navItem.classList.add('active');
+            navItem.setAttribute('style', 'border: 2px solid black; padding: 0.75rem; background-color: #452c63; color: white; text-decoration: none; font-size: 1.5rem;')
 
-    }
-    //removes styling if link does not correspond to the section within the viewport
-    else {
+        }
+        //removes styling if link does not correspond to the section within the viewport
+        else {
+            navItem.classList.remove('active');
+            navItem.removeAttribute('style', 'border: 2px solid black; padding: 0.75rem; background-color: #452c63; color: white');
+            navItem.setAttribute('style', 'text-decoration: none; font-size: 1.5rem;');
+            
+        }
+} else if(sectionList[index].classList.contains('your-active-class')) {
+        navItem.classList.add('active');
+        navItem.setAttribute('style', 'border: 1px solid black; padding: 0.15rem; background-color: #452c63; color: white; text-decoration: none; font-size: 1.10rem;')
+} else {
         navItem.classList.remove('active');
         navItem.removeAttribute('style', 'border: 2px solid black; padding: 0.75rem; background-color: #452c63; color: white');
-        navItem.setAttribute('style', 'text-decoration: none; font-size: 1.5rem;');
-        
-    }
- })
+        navItem.setAttribute('style', 'text-decoration: none; font-size: 1.10rem;');
+}
+})
+
 
 }
 
-//function for anchor smooth scroll
 
-// function sScroll (e) {
-//     e.preventDefault();
-//     navATag.forEach((item, index) => {
-//         let smoothSection = sectionList[index].getBoundingClientRect().top
-//         window.scrollTo({
-//             top: smoothSection + window.scrollY,
-//             behavior: 'smooth'
-//         });
-//     })
-    
-// }
 
 function sScroll(e) {
     e.preventDefault();
