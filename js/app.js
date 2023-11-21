@@ -22,10 +22,9 @@
  * Define Global Variables
  *
  */
-//section1 variable
-const section1 = document.getElementById("section1");
-const section2 = document.getElementById("section2");
-const section3 = document.getElementById("section3");
+const body = document.querySelector('body');
+const header = document.querySelector('.page__header');
+
 
 //section list
 const sectionList = document.getElementsByTagName("section");
@@ -87,6 +86,7 @@ for (let i = 0; i < sectionList.length; i++) {
 //style nav links
 const navLi = document.querySelectorAll("nav li");
 const navATag = document.querySelectorAll("nav li a");
+const main = document.querySelector("main");
 
 navLi.forEach(function (navItem) {
   navItem.style.margin = "2rem";
@@ -124,7 +124,7 @@ function setNavItemActive() {
       navItem.classList.add("active");
       navItem.setAttribute(
         "style",
-        "border: 1px solid black; padding: 0.15rem; background-color: #452c63; color: white; text-decoration: none; font-size: 1.10rem;"
+        "border: 1px solid black; padding: 0.15rem; background-color: #452c63; color: white; text-decoration: none; font-size: 1.4rem;"
       );
     } else {
       navItem.classList.remove("active");
@@ -134,9 +134,9 @@ function setNavItemActive() {
       );
       navItem.setAttribute(
         "style",
-        "text-decoration: none; font-size: 1.10rem;"
+        "text-decoration: none; font-size: 1.4rem;"
       );
-    }
+  }
   });
 }
 
@@ -155,7 +155,11 @@ function sScroll(e) {
   });
 }
 
-// Add class 'active' to section when near top of viewport
+//add margin to the header
+
+main.style.paddingTop = '2rem';
+body.setAttribute('style','min-width: 665px');
+header.setAttribute('style','min-width: 665px');
 
 // Scroll to anchor ID using scrollTO event
 
